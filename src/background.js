@@ -41,12 +41,11 @@ function registerListeners() {
 }
 
 const background = {
-  registerModule(moduleName) {
+  registerModule(backgroundModule) {
     if (!hasRegisteredListeners) {
       registerListeners();
       hasRegisteredListeners = true;
     }
-    const backgroundModule = require(moduleName);
     backgroundTasks[objectHash(backgroundModule)] = backgroundModule;
   }
 };

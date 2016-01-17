@@ -39,9 +39,8 @@ function run(moduleHash, funcName, args) {
 }
 
 const foreground = {
-  getModule(moduleName) {
+  getModule(originalModule) {
     const promiseWrappedModule = {};
-    const originalModule = require(moduleName);
     const moduleHash = objectHash(originalModule);
     _.forEach(originalModule, (func, funcName) => {
       if (_.isFunction(func)) {
