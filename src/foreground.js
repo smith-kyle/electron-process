@@ -13,11 +13,8 @@ function run(moduleHash, funcName, args) {
   };
 
   return new Promise((resolve, reject) => {
-    function taskCompleteCallback(data) {
-      const resultType = data.resultType;
-      const result = data.result;
-      const reason = data.reason;
-      const replyEventKey = data.eventKey;
+    function taskCompleteCallback(event, data) {
+      const {resultType, result, reason, replyEventKey} = data;
 
       if (replyEventKey === eventKey) {
         switch (resultType) {

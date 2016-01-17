@@ -4,7 +4,7 @@ const {ipcRenderer} = require('electron');
 let hasRegisteredListeners = false;
 
 function registerListeners() {
-  ipcRenderer.on('BACKGROUND_START', (payload) => {
+  ipcRenderer.on('BACKGROUND_START', (event, payload) => {
     const {moduleHash, funcName, args, eventKey} = payload;
 
     const backgroundPromise = new Promise((resolve, reject) => {
