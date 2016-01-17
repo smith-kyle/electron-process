@@ -1,0 +1,30 @@
+{
+  "name": "electron-process",
+  "version": "0.1.0",
+  "description": "Send blocking operations to a background process",
+  "main": "build/index.js",
+  "scripts": {
+    "compile": "babel --presets es2015 -d ./build ./src",
+    "eslint": "./node_modules/.bin/eslint src",
+    "prepublish": "babel --presets es2015 -d ./build ./src",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "files": [
+    "build"
+  ],
+  "author": "Kyle Smith",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-cli": "^6.3.15",
+    "babel-preset-es2015": "^6.3.13",
+    "eslint": "^1.9.0"
+  },
+  "peerDependencies": {
+    "electron-prebuilt": "^0.36.4"
+  },
+  "dependencies": {
+    "lodash": "^4.0.0",
+    "object-hash": "^1.1.0",
+    "uuid": "^2.0.1"
+  }
+}
