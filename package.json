@@ -1,6 +1,6 @@
 {
   "name": "electron-process",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Send blocking operations to a background process in electron",
   "main": "build/index.js",
   "scripts": {
@@ -21,9 +21,9 @@
   ],
   "author": "Kyle Smith",
   "license": "ISC",
-  "repository" : {
-    "type" : "git",
-    "url" : "git+https://github.com/smith-kyle/electron-process.git"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/smith-kyle/electron-process.git"
   },
   "bugs": {
     "url": "https://github.com/smith-kyle/electron-process/issues"
