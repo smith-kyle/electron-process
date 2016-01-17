@@ -14,7 +14,7 @@ function run(moduleHash, funcName, args) {
 
   return new Promise((resolve, reject) => {
     function taskCompleteCallback(event, data) {
-      const {resultType, result, reason, replyEventKey} = data;
+      const {resultType, result, reason, eventKey: replyEventKey} = data;
 
       if (replyEventKey === eventKey) {
         switch (resultType) {
