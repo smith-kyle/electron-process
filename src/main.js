@@ -21,7 +21,7 @@ const main = {
 
     ipcMain.on('BACKGROUND_REPLY', (event, result) => {
       _.forEach(foregroundWindows, (foregroundWindow) => {
-        foregroundWindow.send.apply(foregroundWindow.webContents, ['BACKGROUND_REPLY', result]);
+        foregroundWindow.webContents.send.apply(foregroundWindow.webContents, ['BACKGROUND_REPLY', result]);
       });
     });
     return backgroundProcessHandler;
