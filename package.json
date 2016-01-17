@@ -1,7 +1,7 @@
 {
   "name": "electron-process",
   "version": "0.1.1",
-  "description": "Send blocking operations to a background process",
+  "description": "Send blocking operations to a background process in electron",
   "main": "build/index.js",
   "scripts": {
     "compile": "babel --presets es2015 -d ./build ./src",
@@ -12,8 +12,23 @@
   "files": [
     "build"
   ],
+  "keywords": [
+    "node",
+    "electron",
+    "background",
+    "process",
+    "thread"
+  ],
   "author": "Kyle Smith",
   "license": "ISC",
+  "repository" : {
+    "type" : "git",
+    "url" : "git+https://github.com/smith-kyle/electron-process.git"
+  },
+  "bugs": {
+    "url": "https://github.com/smith-kyle/electron-process/issues"
+  },
+  "homepage": "https://github.com/smith-kyle/electron-process#readme",
   "devDependencies": {
     "babel-cli": "^6.3.15",
     "babel-preset-es2015": "^6.3.13",
