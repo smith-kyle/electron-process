@@ -1,6 +1,6 @@
 # electron-process
 
-Send blocking operations to a background process.
+Send blocking operations to a background process. Example application available [here](https://github.com/smith-kyle/electron-background-process-app).
 
 ## Installation
 
@@ -9,7 +9,7 @@ npm install --save electron-process
 ```
 
 ## Usage
-`electron-process` uses a hidden `BrowserWindow` to do all the blocking operations that your heart desires. Create the process in the main electron process, register modules you wish to run in the background, then call those functions within the `BrowserWindow`s that you consider the foreground.
+`electron-process` uses a hidden `BrowserWindow` to do all the blocking operations that your heart desires. Create the background process in the main electron process, register modules you wish to run in the background, then call those functions within the `BrowserWindow`s that you consider the foreground.
 
 ### Main
 ```javascript
