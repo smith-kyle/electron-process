@@ -7,6 +7,12 @@ const backgroundProcessHandler = {
   }
 };
 
+function sendToAllForegroundWindows(eventName, payload) {
+  _.forEach(foregroundWindows, (foregroundWindow) => {
+    foregroundWindow.webContents.send.apply(foregroundWindow.webContents, [eventName, payload]);
+  });
+}
+
 const main = {
   createBackgroundProcess(url, debug) {
     const backgroundWindow = new BrowserWindow();
@@ -20,9 +26,11 @@ const main = {
     });
 
     ipcMain.on('BACKGROUND_REPLY', (event, result) => {
-      _.forEach(foregroundWindows, (foregroundWindow) => {
-        foregroundWindow.webContents.send.apply(foregroundWindow.webContents, ['BACKGROUND_REPLY', result]);
-      });
+      sendToAllForegroundWindows('BACKGROUND_REPLY', result);
+    });
+
+    ipcMain.on('CALLBACK', (event, payload) => {
+      sendToAllForegroundWindows('CALLBACK', payload);
     });
     return backgroundProcessHandler;
   }
